@@ -12,45 +12,62 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #Eazy Level - Order not randomised:
 #e.g. 4 letter, 2 symbol, 2 number = JduE&!91
 
-start = 0
-start1 = 0
-start2 = 0
+# start = 0
+# start1 = 0
+# start2 = 0
 let = ""
-sym = ""
-num = ""
 
-random.shuffle(letters)
-random.shuffle(symbols)
-random.shuffle(numbers)
+for char in range(1, nr_letters + 1):
+  let += random.choice(letters)
+# for letter in letters:
+#   if start < nr_letters:
+#     start += 1
+#     let += random.choice(letter)
 
-for letter in letters:
-  if start < nr_letters:
-    start += 1
-    let += letter
+# for symbol in symbols:
+#   if start1 < nr_symbols:
+#     start1 += 1
+#     let += random.choice(symbol)
+for char in range(1, nr_symbols + 1):
+  let += random.choice(symbols)
 
-for symbol in symbols:
-  if start1 < nr_symbols:
-    start1 += 1
-    sym += symbol
+# for number in numbers:
+#   if start2 < nr_numbers:
+#     start2 += 1
+#     let += random.choice(number)
+for char in range(1, nr_numbers + 1):
+  let += random.choice(numbers)
 
-for number in numbers:
-  if start2 < nr_numbers:
-    start2 += 1
-    num += number
-
-print(f"This is the easy level: {let+sym+num}")
+print(f"This is the easy level: {let}")
   
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
-rndpwd = []
-rndpwd.append(let)
-rndpwd.append(sym)
-rndpwd.append(num)
-random.shuffle(rndpwd)
-new_pass = ""
-for rnd in rndpwd:
-  new_pass += rnd
+# rndpwd = []
+# rndpwd.append(let)
+# print(rndpwd)
+# random.shuffle(rndpwd)
+# print(rndpwd)
 
+
+# new_pass = ""
+# for rnd in rndpwd:
+#   new_pass += rnd
+pass_list = []
+
+for char in range(1, nr_letters + 1):
+  pass_list += random.choice(letters)
+
+for char in range(1, nr_symbols + 1):
+  pass_list += random.choice(symbols)
+
+for char in range(1, nr_numbers + 1):
+  pass_list += random.choice(numbers)
+
+random.shuffle(pass_list)
+new_pass = ""
+for char in pass_list:
+  new_pass += char
+  
 print(f"This is the hard level: {new_pass}")
