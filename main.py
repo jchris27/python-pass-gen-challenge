@@ -38,8 +38,19 @@ for number in numbers:
     start2 += 1
     num += number
 
-print(let+sym+num)
+print(f"This is the easy level: {let+sym+num}")
   
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+
+rndpwd = []
+rndpwd.append(let)
+rndpwd.append(sym)
+rndpwd.append(num)
+random.shuffle(rndpwd)
+new_pass = ""
+for rnd in rndpwd:
+  new_pass += rnd
+
+print(f"This is the hard level: {new_pass}")
