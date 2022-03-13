@@ -12,6 +12,34 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #Eazy Level - Order not randomised:
 #e.g. 4 letter, 2 symbol, 2 number = JduE&!91
 
+start = 0
+start1 = 0
+start2 = 0
+let = ""
+sym = ""
+num = ""
+
+random.shuffle(letters)
+random.shuffle(symbols)
+random.shuffle(numbers)
+
+for letter in letters:
+  if start < nr_letters:
+    start += 1
+    let += letter
+
+for symbol in symbols:
+  if start1 < nr_symbols:
+    start1 += 1
+    sym += symbol
+
+for number in numbers:
+  if start2 < nr_numbers:
+    start2 += 1
+    num += number
+
+print(let+sym+num)
+  
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
